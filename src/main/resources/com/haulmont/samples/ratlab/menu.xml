@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/ui/menu">
+
+    <menu id="application" caption="msg://com.haulmont.samples.ratlab/menu.application" insertBefore="administration">
+        <item screen="ratlab_User.browse" caption="msg://com.haulmont.samples.ratlab.screen.user/UserBrowse.caption"/>
+    </menu>
+
+</menu-config>
