@@ -32,6 +32,7 @@ dependencies {
     implementation 'io.jmix.security:jmix-security-ui-starter'
     implementation 'io.jmix.security:jmix-security-data-starter'
     implementation 'io.jmix.localfs:jmix-localfs-starter'
+    implementation 'io.jmix.cuba:jmix-cuba-starter'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
@@ -41,6 +42,31 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 }
+
+task copyCubaResources(type: Copy){
+    from 'src/main/java'
+    into 'src/main/resources'
+    include '**/*.properties'
+    include '**/*.xml'
+}
+
+task deleteCubaResources(type: Delete){
+    delete fileTree('src/main/java').matching {
+        include '**/*.properties'
+        include '**/*.xml'
+    }
+}
+
+task  moveCubaResources {
+    dependsOn 'copyCubaResources'
+    dependsOn 'deleteCubaResources'
+    tasks.findByName('deleteCubaResources').mustRunAfter 'copyCubaResources'
+
+    group 'migration'
+}
+
+
+
 
 test {
     useJUnitPlatform()
