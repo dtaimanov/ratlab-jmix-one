@@ -1,8 +1,9 @@
 package com.haulmont.samples.ratlab.web.screens.address;
 
-import com.haulmont.cuba.gui.screen.ScreenFragment;
-import com.haulmont.cuba.gui.screen.UiController;
-import com.haulmont.cuba.gui.screen.UiDescriptor;
+
+import io.jmix.ui.screen.ScreenFragment;
+import io.jmix.ui.screen.UiController;
+import io.jmix.ui.screen.UiDescriptor;
 
 @UiController("ratlab_AddressFragment")
 @UiDescriptor("address-fragment.xml")

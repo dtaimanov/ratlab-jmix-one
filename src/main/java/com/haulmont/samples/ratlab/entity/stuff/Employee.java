@@ -1,20 +1,22 @@
 package com.haulmont.samples.ratlab.entity.stuff;
 
-import com.haulmont.chile.core.annotations.Composition;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
-import com.haulmont.cuba.core.entity.annotation.EmbeddedParameters;
-import com.haulmont.cuba.core.entity.annotation.OnDelete;
-import com.haulmont.cuba.core.global.DeletePolicy;
 import com.haulmont.samples.ratlab.entity.Address;
 import com.haulmont.samples.ratlab.entity.Laboratory;
 import com.haulmont.samples.ratlab.entity.research.Research;
+import io.jmix.core.DeletePolicy;
+import io.jmix.core.entity.annotation.EmbeddedParameters;
+import io.jmix.core.entity.annotation.OnDelete;
+import io.jmix.core.metamodel.annotation.Composition;
+import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
+@JmixEntity
 @Table(name = "RATLAB_EMPLOYEE")
 @Entity(name = "ratlab_Employee")
 @NamePattern("%s|name")

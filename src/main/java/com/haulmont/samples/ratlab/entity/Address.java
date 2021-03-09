@@ -1,17 +1,16 @@
 package com.haulmont.samples.ratlab.entity;
 
-import com.haulmont.chile.core.annotations.MetaClass;
 import com.haulmont.chile.core.annotations.NamePattern;
-import com.haulmont.chile.core.annotations.NumberFormat;
-import com.haulmont.cuba.core.entity.EmbeddableEntity;
+import io.jmix.core.metamodel.annotation.JmixEntity;
+import io.jmix.core.metamodel.annotation.NumberFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-@MetaClass(name = "ratlab_Address")
+@JmixEntity(name = "data_ReferenceToEntity")
 @NamePattern("A:%s, %s, %s, %s|field1,field2,town,country")
-public class Address extends EmbeddableEntity {
+public class Address {
     private static final long serialVersionUID = -433127418874885914L;
 
     @Column(name = "COUNTRY")

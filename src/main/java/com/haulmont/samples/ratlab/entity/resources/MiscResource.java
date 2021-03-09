@@ -2,6 +2,7 @@ package com.haulmont.samples.ratlab.entity.resources;
 
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
+@JmixEntity
 @Table(name = "RATLAB_MISC_RESOURCE")
 @Entity(name = "ratlab_MiscResource")
 @NamePattern("%s|name")

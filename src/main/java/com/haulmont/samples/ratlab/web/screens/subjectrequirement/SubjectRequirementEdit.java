@@ -18,6 +18,10 @@ package com.haulmont.samples.ratlab.web.screens.subjectrequirement;
 
 import com.haulmont.cuba.gui.screen.LoadDataBeforeShow;
 import com.haulmont.samples.ratlab.entity.research.SubjectRequirement;
+import io.jmix.ui.screen.EditedEntityContainer;
+import io.jmix.ui.screen.StandardEditor;
+import io.jmix.ui.screen.UiController;
+import io.jmix.ui.screen.UiDescriptor;
 
 @UiController("ratlab_SubjectRequirement.edit")
 @UiDescriptor("subject-requirement-edit.xml")

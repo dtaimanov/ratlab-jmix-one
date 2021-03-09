@@ -1,13 +1,15 @@
 package com.haulmont.samples.ratlab.entity.research;
 
-import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
-import com.haulmont.cuba.core.global.DeletePolicy;
 import com.haulmont.samples.ratlab.entity.resources.MiscResource;
+import io.jmix.core.DeletePolicy;
+import io.jmix.core.entity.annotation.OnDeleteInverse;
+import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+@JmixEntity
 @Table(name = "ratlab_resource_requirement")
 @Entity(name = "ratlab_ResourceRequirement")
 public class ResourceRequirement extends ResearchRequirement {

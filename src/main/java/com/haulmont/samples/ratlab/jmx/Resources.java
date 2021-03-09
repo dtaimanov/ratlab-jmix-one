@@ -16,8 +16,8 @@
 
 package com.haulmont.samples.ratlab.jmx;
 
-import com.haulmont.cuba.security.app.Authenticated;
 import com.haulmont.samples.ratlab.core.ResourceProvider;
+import io.jmix.core.security.Authenticated;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;

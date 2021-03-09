@@ -1,11 +1,15 @@
 package com.haulmont.samples.ratlab.web.screens.laboratory;
 
-import com.haulmont.cuba.gui.actions.list.AddAction;
-import com.haulmont.cuba.gui.actions.list.RemoveAction;
 import com.haulmont.cuba.gui.components.ButtonsPanel;
 import com.haulmont.cuba.gui.screen.LoadDataBeforeShow;
 import com.haulmont.samples.ratlab.entity.Laboratory;
 import com.haulmont.samples.ratlab.entity.stuff.Employee;
+import io.jmix.ui.action.list.AddAction;
+import io.jmix.ui.action.list.RemoveAction;
+import io.jmix.ui.screen.LookupComponent;
+import io.jmix.ui.screen.MasterDetailScreen;
+import io.jmix.ui.screen.UiController;
+import io.jmix.ui.screen.UiDescriptor;
 
 import javax.inject.Inject;
 import javax.inject.Named;

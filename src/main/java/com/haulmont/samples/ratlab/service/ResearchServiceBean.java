@@ -1,12 +1,12 @@
 package com.haulmont.samples.ratlab.service;
 
-import com.haulmont.cuba.core.entity.Entity;
 import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.core.global.Messages;
 import com.haulmont.samples.ratlab.entity.research.Research;
 import com.haulmont.samples.ratlab.entity.research.ResourceRequirement;
 import com.haulmont.samples.ratlab.entity.research.State;
 import com.haulmont.samples.ratlab.entity.resources.MiscResource;
+import io.jmix.core.Entity;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
@@ -16,7 +16,6 @@ import java.util.Set;
 
 @Service(ResearchService.NAME)
 public class ResearchServiceBean implements ResearchService {
-    //todo multithreading?
 
     @Inject
     private Messages messages;

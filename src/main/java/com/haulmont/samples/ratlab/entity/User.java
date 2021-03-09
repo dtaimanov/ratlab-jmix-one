@@ -17,7 +17,7 @@ import java.util.UUID;
 
 @JmixEntity
 @Entity(name = "ratlab_User")
-@Table(name = "RATLAB_USER", indexes = {
+@Table(name = "SEC_USER", indexes = {
         @Index(name = "IDX_RATLAB_USER_ON_USERNAME", columnList = "USERNAME", unique = true)
 })
 public class User implements UserDetails, GrantedAuthorityContainer {

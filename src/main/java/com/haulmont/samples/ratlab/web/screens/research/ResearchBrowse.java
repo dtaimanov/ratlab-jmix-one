@@ -2,17 +2,18 @@ package com.haulmont.samples.ratlab.web.screens.research;
 
 
 import com.haulmont.cuba.gui.Dialogs;
-import com.haulmont.cuba.gui.actions.list.AddAction;
-import com.haulmont.cuba.gui.actions.list.RefreshAction;
-import com.haulmont.cuba.gui.actions.list.RemoveAction;
-import com.haulmont.cuba.gui.components.Action;
 import com.haulmont.cuba.gui.components.ButtonsPanel;
-import com.haulmont.cuba.gui.model.CollectionContainer;
 import com.haulmont.cuba.gui.screen.LoadDataBeforeShow;
 import com.haulmont.samples.ratlab.entity.research.Research;
 import com.haulmont.samples.ratlab.entity.research.State;
 import com.haulmont.samples.ratlab.entity.stuff.Employee;
 import com.haulmont.samples.ratlab.service.ResearchService;
+import io.jmix.ui.action.Action;
+import io.jmix.ui.action.list.AddAction;
+import io.jmix.ui.action.list.RefreshAction;
+import io.jmix.ui.action.list.RemoveAction;
+import io.jmix.ui.model.CollectionContainer;
+import io.jmix.ui.screen.*;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -63,7 +64,7 @@ public class ResearchBrowse extends MasterDetailScreen<Research> {
 
         } catch (RuntimeException e) {
             dialogs.createMessageDialog()
-                    .withType(Dialogs.MessageType.WARNING)
+                    //.withType(Dialogs.MessageType.WARNING)//todo
                     .withCaption("Cannot perform gathering")
                     .withMessage(e.getMessage())
                     .show();
@@ -90,7 +91,7 @@ public class ResearchBrowse extends MasterDetailScreen<Research> {
 
         } catch (RuntimeException e) {
             dialogs.createMessageDialog()
-                    .withType(Dialogs.MessageType.WARNING)
+                    //.withType(Dialogs.MessageType.WARNING)//todo
                     .withCaption("Cannot perform research")
                     .withMessage(e.getMessage())
                     .show();

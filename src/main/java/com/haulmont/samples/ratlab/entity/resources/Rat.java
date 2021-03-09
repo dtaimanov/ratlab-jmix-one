@@ -2,11 +2,13 @@ package com.haulmont.samples.ratlab.entity.resources;
 
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+@JmixEntity
 @Table(name = "RATLAB_RAT")
 @Entity(name = "ratlab_Rat")
 @NamePattern("%s|name")

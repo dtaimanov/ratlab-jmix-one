@@ -17,10 +17,12 @@
 package com.haulmont.samples.ratlab.entity.research;
 
 import com.haulmont.samples.ratlab.entity.resources.Rat;
+import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@JmixEntity
 @Table(name = "ratlab_subject_requirement")
 @Entity(name = "ratlab_SubjectRequirement")
 public class SubjectRequirement extends ResearchRequirement {

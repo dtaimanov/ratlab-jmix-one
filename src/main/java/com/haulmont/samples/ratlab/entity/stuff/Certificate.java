@@ -2,14 +2,16 @@ package com.haulmont.samples.ratlab.entity.stuff;
 
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
-import com.haulmont.cuba.core.entity.annotation.CaseConversion;
 import com.haulmont.cuba.core.entity.annotation.Lookup;
 import com.haulmont.cuba.core.entity.annotation.LookupType;
+import io.jmix.core.entity.annotation.CaseConversion;
+import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+@JmixEntity
 @Table(name = "RATLAB_CERTIFICATE")
 @Entity(name = "ratlab_Certificate")
 @NamePattern("%s|title")

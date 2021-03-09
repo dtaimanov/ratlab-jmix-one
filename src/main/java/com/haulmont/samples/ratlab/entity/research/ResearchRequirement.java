@@ -17,10 +17,12 @@
 package com.haulmont.samples.ratlab.entity.research;
 
 import com.haulmont.cuba.core.entity.StandardEntity;
+import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@JmixEntity
 @Table(name = "RATLAB_RESEARCH_REQUIREMENT")
 @Entity(name = "ratlab_ResearchRequirement")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)

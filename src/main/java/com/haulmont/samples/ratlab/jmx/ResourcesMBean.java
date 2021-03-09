@@ -16,10 +16,9 @@
 
 package com.haulmont.samples.ratlab.jmx;
 
-import com.haulmont.cuba.core.sys.jmx.JmxBean;
 import org.springframework.jmx.export.annotation.ManagedResource;
 
-@JmxBean(module = "ratlab", alias = "resources")
+//@JmxBean(module = "ratlab", alias = "resources")//TODO!!
 @ManagedResource(description = "JMX bean for some settings")
 public interface ResourcesMBean {
 

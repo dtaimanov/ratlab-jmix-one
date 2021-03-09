@@ -1,6 +1,7 @@
 package com.haulmont.samples.ratlab.entity.resources;
 
-import com.haulmont.chile.core.datatypes.impl.EnumClass;
+
+import io.jmix.core.metamodel.datatype.impl.EnumClass;
 
 import javax.annotation.Nullable;
 
