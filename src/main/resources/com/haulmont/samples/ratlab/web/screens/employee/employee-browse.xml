@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:dynattrui="http://jmix.io/schema/dynattr/ui"
         caption="msg://employeeBrowse.caption"
         focusComponent="employeesTable"
         messagesPack="com.haulmont.samples.ratlab.web.screens.employee">
+    <facets>
+        <dynattrui:dynamicAttributes/>
+    </facets>
     <data readOnly="true">
         <collection id="employeesDc"
                     class="com.haulmont.samples.ratlab.entity.stuff.Employee">
             <view extends="_local">
-                <property name="laboratory" view="_minimal"/>
+                <property name="laboratory" view="_minimal">
+                    <property name="address"/><!--todo WA for "Unable to access value holder for" embedded property-->
+                </property>
+
                 <property name="homeAddress"/>
                 <property name="supervisor" view="_minimal"/>
             </view>

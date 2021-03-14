@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:dynattrui="http://jmix.io/schema/dynattr/ui"
         caption="msg://employeeEdit.caption"
         focusComponent="form"
         messagesPack="com.haulmont.samples.ratlab.web.screens.employee">
+    <facets>
+        <dynattrui:dynamicAttributes/>
+    </facets>
     <data>
         <instance id="employeeDc"
                   class="com.haulmont.samples.ratlab.entity.stuff.Employee">
             <view extends="_local">
-                <property name="laboratory" view="_minimal"/>
+                <!--<property name="laboratory" view="_minimal"/>--><!--todo WA for "Unable to access value holder for" embedded property-->
                 <property name="homeAddress"/>
                 <property name="supervisor" view="_minimal"/>
                 <property name="certificates" view="_minimal">
@@ -45,7 +49,7 @@
                         <lookupField id="positionField" property="position"/>
                         <textField id="experienceField" property="experience"/>
                         <dateField id="sinceField" property="since"/>
-                        <pickerField property="laboratory"/>
+                        <!--<pickerField property="laboratory"/>-->
                         <lookupField property="supervisor" optionsContainer="supervisorsDc"/>
                     </column>
                 </form>
