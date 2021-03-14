@@ -130,7 +130,6 @@
                                     <actions>
                                         <action id="create" type="create"/>
                                         <action id="edit" type="edit"/>
-                                        <action id="excel" type="excel"/>
                                         <action id="remove" type="remove"/>
                                     </actions>
                                     <buttonsPanel alwaysVisible="true">
@@ -138,8 +137,6 @@
                                                 action="resourceRequirementsTable.create"/>
                                         <button id="resourceRequirementsTableEditBtn"
                                                 action="resourceRequirementsTable.edit"/>
-                                        <button id="resourceRequirementsTableExcelBtn"
-                                                action="resourceRequirementsTable.excel"/>
                                         <button id="resourceRequirementsTableRemoveBtn"
                                                 action="resourceRequirementsTable.remove"/>
                                     </buttonsPanel>

@@ -8,7 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-@JmixEntity(name = "data_ReferenceToEntity")
+@JmixEntity(name = "ratlab_Address")
 @NamePattern("A:%s, %s, %s, %s|field1,field2,town,country")
 public class Address {
     private static final long serialVersionUID = -433127418874885914L;

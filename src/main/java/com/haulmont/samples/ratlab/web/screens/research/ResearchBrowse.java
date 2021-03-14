@@ -1,13 +1,13 @@
 package com.haulmont.samples.ratlab.web.screens.research;
 
 
-import com.haulmont.cuba.gui.Dialogs;
 import com.haulmont.cuba.gui.components.ButtonsPanel;
 import com.haulmont.cuba.gui.screen.LoadDataBeforeShow;
 import com.haulmont.samples.ratlab.entity.research.Research;
 import com.haulmont.samples.ratlab.entity.research.State;
 import com.haulmont.samples.ratlab.entity.stuff.Employee;
 import com.haulmont.samples.ratlab.service.ResearchService;
+import io.jmix.ui.Dialogs;
 import io.jmix.ui.action.Action;
 import io.jmix.ui.action.list.AddAction;
 import io.jmix.ui.action.list.RefreshAction;

@@ -6,7 +6,7 @@ plugins {
 apply plugin: 'org.springframework.boot'
 
 jmix {
-    bomVersion = '0.3.1' 
+    bomVersion = '1.0.0-SNAPSHOT'
     projectId = 'ratlab'
 }
 
@@ -15,6 +15,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
+    mavenLocal()
     mavenCentral() 
     maven {
         url 'https://nexus.jmix.io/repository/public'
@@ -33,6 +34,8 @@ dependencies {
     implementation 'io.jmix.security:jmix-security-data-starter'
     implementation 'io.jmix.localfs:jmix-localfs-starter'
     implementation 'io.jmix.cuba:jmix-cuba-starter'
+    implementation 'io.jmix.dynattr:jmix-dynattr-starter'
+    implementation 'io.jmix.dynattr:jmix-dynattr-ui-starter'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
