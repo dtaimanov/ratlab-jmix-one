@@ -16,11 +16,18 @@
 
 package com.haulmont.samples.ratlab.jmx;
 
+import org.springframework.jmx.export.annotation.ManagedOperation;
+import org.springframework.jmx.export.annotation.ManagedOperationParameter;
+import org.springframework.jmx.export.annotation.ManagedOperationParameters;
 import org.springframework.jmx.export.annotation.ManagedResource;
 
-//@JmxBean(module = "ratlab", alias = "resources")//TODO!!
-@ManagedResource(description = "JMX bean for some settings")
+@ManagedResource(
+        objectName = "bean:name=resources",
+        description = "Manage lab resources")
 public interface ResourcesMBean {
 
+    @ManagedOperation(description = "Increases amount of each consumable resource")
+    @ManagedOperationParameters({
+            @ManagedOperationParameter(name = "count", description = "how many items to add")})
     String addConsumables(String count);
 }

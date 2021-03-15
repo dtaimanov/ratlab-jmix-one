@@ -64,4 +64,34 @@
         </update>
     </changeSet>
 
+    <!--AUDIT START-->
+    <changeSet id="8" author="migrator">
+        <renameTable oldTableName="SEC_LOGGED_ENTITY" newTableName="AUDIT_LOGGED_ENTITY"/>
+        <renameTable oldTableName="SEC_LOGGED_ATTR" newTableName="AUDIT_LOGGED_ATTR"/>
+        <renameTable oldTableName="SEC_ENTITY_LOG" newTableName="AUDIT_ENTITY_LOG"/>
+    </changeSet>
+
+    <changeSet id="9" author="migrator">
+        <addColumn tableName="AUDIT_ENTITY_LOG">
+            <column name="USER_LOGIN" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="10" author="migrator">
+        <update tableName="AUDIT_ENTITY_LOG">
+            <column name="USER_LOGIN" valueComputed="(select u.USERNAME from SEC_USER u where u.ID = USER_ID)"/>
+        </update>
+    </changeSet>
+
+    <!--AUDIT END-->
+
+    <!--DYNATTR START-->
+    <changeSet id="11" author="migrator">
+        <renameTable oldTableName="SYS_CATEGORY" newTableName="DYNAT_CATEGORY"/>
+        <renameTable oldTableName="SYS_CATEGORY_ATTR" newTableName="DYNAT_CATEGORY_ATTR"/>
+        <renameTable oldTableName="SYS_ATTR_VALUE" newTableName="DYNAT_ATTR_VALUE"/>
+    </changeSet>
+
+    <!--DYNATTR END-->
+
 </databaseChangeLog>
