@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <queries xmlns="http://schemas.haulmont.com/cuba/rest-queries.xsd">
-    <query name="checkedRats" entity="ratlab_Rat" view="_local">
+    <query name="checkedRats" entity="ratlab_Rat" fetchPlan="_local">
         <jpql><![CDATA[select r from ratlab_Rat r where r.checked = :checked]]></jpql>
         <params>
             <param name="checked" type="java.lang.Boolean"/>
