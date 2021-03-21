@@ -44,6 +44,9 @@ dependencies {
     implementation 'io.jmix.security:jmix-security-oauth2-starter'
     implementation 'io.jmix.rest:jmix-rest-starter'
 
+    implementation 'io.jmix.email:jmix-email-starter'
+    implementation 'io.jmix.email:jmix-email-ui-starter'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
     runtimeOnly 'org.hsqldb:hsqldb'

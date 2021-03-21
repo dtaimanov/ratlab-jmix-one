@@ -7,6 +7,10 @@ import com.haulmont.samples.ratlab.entity.research.ResourceRequirement;
 import com.haulmont.samples.ratlab.entity.research.State;
 import com.haulmont.samples.ratlab.entity.resources.MiscResource;
 import io.jmix.core.Entity;
+import io.jmix.email.EmailException;
+import io.jmix.email.EmailInfo;
+import io.jmix.email.EmailInfoBuilder;
+import io.jmix.email.Emailer;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
@@ -22,6 +26,9 @@ public class ResearchServiceBean implements ResearchService {
 
     @Inject
     private DataManager dataManager;
+
+    @Inject
+    private Emailer emailer;
 
     @Override
     public void gatherResources(Research research) throws IllegalStateException {
@@ -76,5 +83,16 @@ public class ResearchServiceBean implements ResearchService {
         research.setState(State.FINISHED);
         toCommit.add(research);
         dataManager.commit(toCommit.toArray(new Entity[0]));
+    }
+
+
+    @Override
+    public void sendEmail() throws EmailException {
+        EmailInfo emailInfo = EmailInfoBuilder.create()
+                .setAddresses("d.taimanov@haulmont.com")
+                .setSubject("Email subject")
+                .setBody("Some email body")
+                .build();
+        emailer.sendEmail(emailInfo);
     }
 }
