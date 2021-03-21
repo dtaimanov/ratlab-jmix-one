@@ -94,4 +94,27 @@
 
     <!--DYNATTR END-->
 
+
+    <!--EMAILER START-->
+    <changeSet id="12" author="migrator">
+        <renameTable oldTableName="SYS_SENDING_MESSAGE" newTableName="EMAIL_SENDING_MESSAGE"/>
+        <renameTable oldTableName="SYS_SENDING_ATTACHMENT" newTableName="EMAIL_SENDING_ATTACHMENT"/>
+    </changeSet>
+
+
+    <changeSet id="13" author="migrator">
+        <renameColumn tableName="EMAIL_SENDING_MESSAGE"
+                      oldColumnName="CAPTION"
+                      newColumnName="SUBJECT"/>
+
+        <addColumn tableName="EMAIL_SENDING_MESSAGE">
+            <column name="CONTENT_TEXT_FILE" type="clob"/>
+        </addColumn>
+        <addColumn tableName="EMAIL_SENDING_ATTACHMENT">
+            <column name="CONTENT_FILE" type="clob"/>
+        </addColumn>
+    </changeSet>
+
+    <!--EMAILER END-->
+
 </databaseChangeLog>

@@ -1,10 +1,10 @@
 package com.haulmont.samples.ratlab.web.screens.certificate;
 
-import com.haulmont.cuba.gui.Dialogs;
 import com.haulmont.cuba.gui.screen.LoadDataBeforeShow;
 import com.haulmont.samples.ratlab.entity.stuff.Certificate;
 import com.haulmont.samples.ratlab.service.ResearchService;
 import io.jmix.email.EmailException;
+import io.jmix.ui.Dialogs;
 import io.jmix.ui.action.Action;
 import io.jmix.ui.screen.*;
 
