@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
         xmlns:dynattrui="http://jmix.io/schema/dynattr/ui"
+        xmlns:chart="http://schemas.haulmont.com/charts/charts.xsd"
         caption="msg://employeeBrowse.caption"
         focusComponent="employeesTable"
         messagesPack="com.haulmont.samples.ratlab.web.screens.employee">
@@ -59,6 +60,13 @@
                 <button id="removeBtn" action="employeesTable.remove"/>
             </buttonsPanel>
         </groupTable>
+
+        <chart:pieChart id="pieChart"
+                        dataContainer="employeesDc"
+                        titleField="name"
+                        valueField="experience"
+                        width="100%"
+                        height="400px"/>
 
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
