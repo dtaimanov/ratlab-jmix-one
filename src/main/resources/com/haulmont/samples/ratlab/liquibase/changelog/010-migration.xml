@@ -73,13 +73,13 @@
 
     <changeSet id="9" author="migrator">
         <addColumn tableName="AUDIT_ENTITY_LOG">
-            <column name="USER_LOGIN" type="varchar(255)"/>
+            <column name="USERNAME" type="varchar(255)"/>
         </addColumn>
     </changeSet>
 
     <changeSet id="10" author="migrator">
         <update tableName="AUDIT_ENTITY_LOG">
-            <column name="USER_LOGIN" valueComputed="(select u.USERNAME from SEC_USER u where u.ID = USER_ID)"/>
+            <column name="USERNAME" valueComputed="(select u.USERNAME from SEC_USER u where u.ID = USER_ID)"/>
         </update>
     </changeSet>
 
@@ -116,5 +116,32 @@
     </changeSet>
 
     <!--EMAILER END-->
+
+    <!--REPORTS START-->
+    <changeSet id="14" author="migrator"><!--check for all databases-->
+        <update tableName="REPORT_REPORT">
+            <column name="XML"
+                    valueComputed="REPLACE(XML, '&quot;metaClass&quot;:&quot;report$', '&quot;metaClass&quot;:&quot;report_')"/>
+        </update>
+    </changeSet>
+
+    <changeSet id="15" author="migrator">
+        <addColumn tableName="REPORT_EXECUTION">
+            <column name="PRINCIPAL" type="varchar(255)"/>
+            <column name="OUTPUT_DOCUMENT" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="16" author="migrator">
+        <update tableName="REPORT_EXECUTION">
+            <column name="PRINCIPAL" valueComputed="(select u.USERNAME from SEC_USER u where u.ID = USER_ID)"/>
+        </update>
+    </changeSet>
+
+    <changeSet id="17" author="migrator">
+        <dropNotNullConstraint tableName="REPORT_EXECUTION" columnName="USER_ID"/>
+    </changeSet>
+    <!--REPORTS END-->
+
 
 </databaseChangeLog>
