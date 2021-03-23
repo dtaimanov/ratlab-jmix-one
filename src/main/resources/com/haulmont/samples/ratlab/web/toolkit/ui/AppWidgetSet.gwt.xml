@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
 
-    <inherits name="com.haulmont.cuba.web.widgets.WidgetSet"/>
-    <inherits name="com.haulmont.charts.web.widgets.ChartsWidgetSet"/>
+    <inherits name="io.jmix.ui.widget.WidgetSet"/>
+    <inherits name="io.jmix.charts.widget.ChartsWidgetSet"/>
 </module>
