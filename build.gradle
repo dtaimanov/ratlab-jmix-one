@@ -51,6 +51,12 @@ dependencies {
     implementation 'io.jmix.reports:jmix-reports-ui-starter'
     implementation 'io.jmix.reports:jmix-reports-rest-starter'
 
+//    implementation 'io.jmix.ui:jmix-ui-widgets'
+//    widgets 'io.jmix.ui:jmix-ui-widgets'
+//    implementation 'io.jmix.ui:jmix-charts-starter'
+//    widgets 'io.jmix.ui:jmix-charts'
+
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
     runtimeOnly 'org.hsqldb:hsqldb'
