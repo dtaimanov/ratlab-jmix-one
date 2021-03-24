@@ -4,7 +4,6 @@ import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.samples.ratlab.entity.Address;
 import com.haulmont.samples.ratlab.entity.Laboratory;
-import com.haulmont.samples.ratlab.entity.research.Research;
 import io.jmix.core.DeletePolicy;
 import io.jmix.core.entity.annotation.EmbeddedParameters;
 import io.jmix.core.entity.annotation.OnDelete;
@@ -42,9 +41,6 @@ public class Employee extends StandardEntity {
     @JoinColumn(name = "LABORATORY_ID")
     @ManyToOne(fetch = FetchType.LAZY)
     private Laboratory laboratory;
-
-    @ManyToMany(mappedBy = "participants")
-    private List<Research> researches;
 
     @OnDelete(DeletePolicy.CASCADE)
     @OneToOne(fetch = FetchType.LAZY)
@@ -101,14 +97,6 @@ public class Employee extends StandardEntity {
 
     public Laboratory getLaboratory() {
         return laboratory;
-    }
-
-    public List<Research> getResearches() {
-        return researches;
-    }
-
-    public void setResearches(List<Research> researches) {
-        this.researches = researches;
     }
 
     public Date getSince() {
