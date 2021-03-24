@@ -3,8 +3,6 @@
 
     <menu id="application" caption="msg://com.haulmont.samples.ratlab/menu.application" insertBefore="administration">
         <item screen="ratlab_User.browse" caption="msg://com.haulmont.samples.ratlab.screen.user/UserBrowse.caption"/>
-        <item screen="ratlab_Laboratory.browse" caption="mainMsg://menu_config.ratlab_Laboratory.browse"/>
-        <item screen="ratlab_Certificate.browse" caption="mainMsg://menu_config.ratlab_Certificate.browse"/>
         <item screen="ratlab_Employee.browse" caption="mainMsg://menu_config.ratlab_Employee.browse"/>
     </menu>
 

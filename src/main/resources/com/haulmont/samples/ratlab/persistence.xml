@@ -3,8 +3,6 @@
     <persistence-unit name="ratlab" transaction-type="RESOURCE_LOCAL">
 
         <class>com.haulmont.samples.ratlab.entity.stuff.Employee</class>
-        <class>com.haulmont.samples.ratlab.entity.Laboratory</class>
         <class>com.haulmont.samples.ratlab.entity.Address</class>
-        <class>com.haulmont.samples.ratlab.entity.stuff.Certificate</class>
     </persistence-unit>
 </persistence>

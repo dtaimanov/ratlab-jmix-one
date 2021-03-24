@@ -11,25 +11,16 @@
         <instance id="employeeDc"
                   class="com.haulmont.samples.ratlab.entity.stuff.Employee">
             <view extends="_local">
-                <!--<property name="laboratory" view="_minimal"/>--><!--todo WA for "Unable to access value holder for" embedded property-->
                 <property name="homeAddress"/>
                 <property name="supervisor" view="_minimal"/>
-                <property name="certificates" view="_minimal">
-                    <property name="title"/>
-                    <property name="aquired"/>
-                    <property name="code"/>
-                    <property name="description"/>
-                </property>
             </view>
             <instance id="addressDc" property="homeAddress"/>
-            <collection id="certificatesDc" property="certificates"/>
             <loader dynamicAttributes="true"/>
         </instance>
         <collection id="supervisorsDc"
                     class="com.haulmont.samples.ratlab.entity.stuff.Employee">
             <view extends="_base"/>
             <loader id="supervisorsDl" dynamicAttributes="true">
-                <!--TODO positions hierarchy and filter by level-->
                 <query>
                     <![CDATA[select e from ratlab_Employee e]]>
                 </query>
@@ -49,7 +40,6 @@
                         <lookupField id="positionField" property="position"/>
                         <textField id="experienceField" property="experience"/>
                         <dateField id="sinceField" property="since"/>
-                        <!--<pickerField property="laboratory"/>-->
                         <lookupField property="supervisor" optionsContainer="supervisorsDc"/>
                     </column>
                 </form>
@@ -58,29 +48,6 @@
                 <fragment screen="ratlab_AddressFragment"/>
             </groupBox>
         </hbox>
-        <table id="certificatesTable" height="300px" width="100%" dataContainer="certificatesDc" multiselect="true"
-               presentations="true">
-            <actions>
-                <action id="create" type="create"/>
-                <action id="edit" type="edit"/>
-                <action id="remove" type="remove"/>
-                <action id="view" type="view"/>
-            </actions>
-            <buttonsPanel alwaysVisible="true">
-                <button id="certificatesTableCreateBtn" action="certificatesTable.create"/>
-                <button id="certificatesTableEditBtn" action="certificatesTable.edit"/>
-                <button id="certificatesTableRemoveBtn" action="certificatesTable.remove"/>
-                <button id="certificatesTableViewBtn" action="certificatesTable.view"/>
-            </buttonsPanel>
-            <columns>
-                <column id="title"/>
-                <column id="aquired"/>
-                <column id="code"/>
-                <column id="description"/>
-            </columns>
-        </table>
-
-
         <hbox id="editActions" spacing="true">
             <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
             <button id="closeBtn" action="windowClose"/>

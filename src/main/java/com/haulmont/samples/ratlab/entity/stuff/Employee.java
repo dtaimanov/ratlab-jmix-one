@@ -3,17 +3,14 @@ package com.haulmont.samples.ratlab.entity.stuff;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.samples.ratlab.entity.Address;
-import com.haulmont.samples.ratlab.entity.Laboratory;
 import io.jmix.core.DeletePolicy;
 import io.jmix.core.entity.annotation.EmbeddedParameters;
 import io.jmix.core.entity.annotation.OnDelete;
-import io.jmix.core.metamodel.annotation.Composition;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
-import java.util.List;
 
 @JmixEntity
 @Table(name = "RATLAB_EMPLOYEE")
@@ -38,10 +35,6 @@ public class Employee extends StandardEntity {
     @Column(name = "SINCE", nullable = false)
     private Date since;
 
-    @JoinColumn(name = "LABORATORY_ID")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Laboratory laboratory;
-
     @OnDelete(DeletePolicy.CASCADE)
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SUPERVISOR_ID")
@@ -62,18 +55,6 @@ public class Employee extends StandardEntity {
     })
     private Address homeAddress;
 
-    @OnDelete(DeletePolicy.CASCADE)
-    @OneToMany(mappedBy = "owner")
-    @Composition
-    private List<Certificate> certificates;
-
-    public List<Certificate> getCertificates() {
-        return certificates;
-    }
-
-    public void setCertificates(List<Certificate> certificates) {
-        this.certificates = certificates;
-    }
 
     public Address getHomeAddress() {
         return homeAddress;
@@ -89,14 +70,6 @@ public class Employee extends StandardEntity {
 
     public void setSupervisor(Employee supervisor) {
         this.supervisor = supervisor;
-    }
-
-    public void setLaboratory(Laboratory laboratory) {
-        this.laboratory = laboratory;
-    }
-
-    public Laboratory getLaboratory() {
-        return laboratory;
     }
 
     public Date getSince() {

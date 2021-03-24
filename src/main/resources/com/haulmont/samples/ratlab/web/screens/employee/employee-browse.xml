@@ -11,10 +11,6 @@
         <collection id="employeesDc"
                     class="com.haulmont.samples.ratlab.entity.stuff.Employee">
             <view extends="_local">
-                <property name="laboratory" view="_minimal">
-                    <property name="address"/><!--todo WA for "Unable to access value holder for" embedded property-->
-                </property>
-
                 <property name="homeAddress"/>
                 <property name="supervisor" view="_minimal"/>
             </view>
@@ -48,7 +44,6 @@
                 <column id="supervisor"/>
                 <column id="experience"/>
                 <column id="since"/>
-                <column id="laboratory"/>
                 <column id="homeAddress"/>
             </columns>
             <rowsCount/>
