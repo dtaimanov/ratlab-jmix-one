@@ -11,8 +11,7 @@
                   <DataStoreSettings>
                     <option name="generateDdlType" value="CREATE_AND_UPDATE"/>
                     <option name="supportedTypes">
-                      <option value="hsql"/>
-                      <option value="postgres"/>
+                        <option value="hsql"/>
                     </option>
                   </DataStoreSettings>
                 </value>
@@ -26,27 +25,27 @@
   <component name="JmixPluginProjectSettings">
     <option name="savedDbProperties">
       <list>
-        <SavedDbProperties>
-          <option name="databaseName" value="ratlab3"/>
-          <option name="dbType" value="postgres"/>
-          <option name="dbmsVersion"/>
-          <option name="host" value="localhost"/>
-          <option name="pass" value="cuba"/>
-          <option name="systemPassword" value=""/>
-          <option name="systemUser" value=""/>
-          <option name="url" value="jdbc:postgresql://localhost/ratlab3"/>
-          <option name="user" value="cuba"/>
-        </SavedDbProperties>
-        <SavedDbProperties>
-          <option name="databaseName" value="ratlab2"/>
-          <option name="dbType" value="hsql"/>
-          <option name="dbmsVersion"/>
-          <option name="host" value="localhost"/>
-          <option name="systemPassword" value=""/>
-          <option name="systemUser" value=""/>
-          <option name="url" value="jdbc:hsqldb:hsql://localhost/ratlab2"/>
-          <option name="user" value="sa"/>
-        </SavedDbProperties>
+          <SavedDbProperties>
+              <option name="databaseName" value="ratlab3"/>
+              <option name="dbType" value="postgres"/>
+              <option name="dbmsVersion"/>
+              <option name="host" value="localhost"/>
+              <option name="pass" value="cuba"/>
+              <option name="systemPassword" value=""/>
+              <option name="systemUser" value=""/>
+              <option name="url" value="jdbc:postgresql://localhost/ratlab3"/>
+              <option name="user" value="cuba"/>
+          </SavedDbProperties>
+          <SavedDbProperties>
+              <option name="databaseName" value="ratlab2"/>
+              <option name="dbType" value="hsql"/>
+              <option name="dbmsVersion"/>
+              <option name="host" value="localhost"/>
+              <option name="systemPassword" value=""/>
+              <option name="systemUser" value=""/>
+              <option name="url" value="jdbc:hsqldb:hsql://localhost/ratlab2"/>
+              <option name="user" value="sa"/>
+          </SavedDbProperties>
       </list>
     </option>
   </component>

@@ -3,9 +3,7 @@ package com.haulmont.samples.ratlab.entity.stuff;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.samples.ratlab.entity.Address;
-import io.jmix.core.DeletePolicy;
 import io.jmix.core.entity.annotation.EmbeddedParameters;
-import io.jmix.core.entity.annotation.OnDelete;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
@@ -35,7 +33,6 @@ public class Employee extends StandardEntity {
     @Column(name = "SINCE", nullable = false)
     private Date since;
 
-    @OnDelete(DeletePolicy.CASCADE)
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SUPERVISOR_ID")
     private Employee supervisor;
