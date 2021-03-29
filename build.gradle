@@ -56,10 +56,10 @@ dependencies {
     implementation 'io.jmix.ui:jmix-charts-starter'
     widgets 'io.jmix.ui:jmix-charts'
 
+    implementation 'io.jmix.localfs:jmix-localfs-starter'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    runtimeOnly 'org.hsqldb:hsqldb'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

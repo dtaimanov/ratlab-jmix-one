@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+    <component name="JmixDataStoreSettingsManager">
+        <moduleSettings>
+            <entry key="com.company.ratlab-jmix-one.main">
+                <ModuleSettings>
+                    <option name="dataStoreOptions">
+                        <map>
+                            <entry key="main">
+                                <value>
+                                    <DataStoreSettings>
+                                        <option name="generateDdlType" value="CREATE_AND_UPDATE"/>
+                                        <option name="supportedTypes">
+                                            <option value="postgres"/>
+                                        </option>
+                                    </DataStoreSettings>
+                                </value>
+                            </entry>
+                        </map>
+                    </option>
+                </ModuleSettings>
+            </entry>
+        </moduleSettings>
+    </component>
     <component name="JmixPluginProjectSettings">
         <option name="savedDbProperties">
             <list>
@@ -12,6 +34,29 @@
                     <option name="systemUser" value=""/>
                     <option name="url" value="jdbc:hsqldb:file:.jmix/hsqldb/ratlab"/>
                     <option name="user" value="sa"/>
+                </SavedDbProperties>
+                <SavedDbProperties>
+                    <option name="databaseName" value="ratlab2"/>
+                    <option name="dbType" value="postgres"/>
+                    <option name="dbmsVersion"/>
+                    <option name="host" value="localhost"/>
+                    <option name="pass" value="cuba"/>
+                    <option name="systemPassword" value=""/>
+                    <option name="systemUser" value=""/>
+                    <option name="url" value="jdbc:postgresql://localhost/ratlab2"/>
+                    <option name="user" value="cuba"/>
+                </SavedDbProperties>
+                <SavedDbProperties>
+                    <option name="databaseName" value="ratlab"/>
+                    <option name="dbType" value="mysql"/>
+                    <option name="dbmsVersion"/>
+                    <option name="host" value="localhost"/>
+                    <option name="pass" value="cuba"/>
+                    <option name="systemPassword" value=""/>
+                    <option name="systemUser" value=""/>
+                    <option name="url"
+                            value="jdbc:mysql://localhost/ratlab?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC"/>
+                    <option name="user" value="root"/>
                 </SavedDbProperties>
             </list>
         </option>

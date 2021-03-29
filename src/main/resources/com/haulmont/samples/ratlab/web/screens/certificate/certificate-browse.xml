@@ -41,6 +41,7 @@
                 <column id="code"/>
                 <column id="description"/>
                 <column id="owner"/>
+                <column id="file"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

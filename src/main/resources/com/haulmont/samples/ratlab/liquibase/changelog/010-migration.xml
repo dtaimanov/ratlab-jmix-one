@@ -24,26 +24,33 @@
     </changeSet>
 
     <changeSet id="3" author="migrator">
-
         <update tableName="SEC_USER">
             <column name="USERNAME" valueComputed="LOGIN_LC"/>
             <column name="ENABLED" valueComputed="ACTIVE"/>
-            <column name="PASSWORD" valueComputed="'{' || PASSWORD_ENCRYPTION || '}' || PASSWORD"/>
+            <column name="PASSWORD" valueComputed="CONCAT('{',PASSWORD_ENCRYPTION,'}',PASSWORD)"/>
         </update>
 
     </changeSet>
 
     <changeSet id="4" author="migrator">
 
-        <dropNotNullConstraint columnName="LOGIN" tableName="SEC_USER"/>
-        <dropNotNullConstraint columnName="LOGIN_LC" tableName="SEC_USER"/>
+        <dropNotNullConstraint columnName="LOGIN" columnDataType="varchar(50)" tableName="SEC_USER"/>
+        <dropNotNullConstraint columnName="LOGIN_LC" columnDataType="varchar(50)" tableName="SEC_USER"/>
 
     </changeSet>
 
     <changeSet id="5" author="migrator">
 
-        <insert tableName="SEC_ROLE_ASSIGNMENT">
+        <insert tableName="SEC_ROLE_ASSIGNMENT" dbms="postgresql, mssql, hsqldb">
             <column name="ID" value="b44d6d0f-98ce-4e15-806f-f0062d5d49ad"/>
+            <column name="VERSION" value="1"/>
+            <column name="USERNAME" value="admin"/>
+            <column name="ROLE_CODE" value="system-full-access"/>
+            <column name="ROLE_TYPE" value="resource"/>
+        </insert>
+
+        <insert tableName="SEC_ROLE_ASSIGNMENT" dbms="oracle, mysql, mariadb">
+            <column name="ID" value="b44d6d0f98ce4e15806ff0062d5d49ad"/>
             <column name="VERSION" value="1"/>
             <column name="USERNAME" value="admin"/>
             <column name="ROLE_CODE" value="system-full-access"/>
@@ -104,6 +111,7 @@
 
     <changeSet id="13" author="migrator">
         <renameColumn tableName="EMAIL_SENDING_MESSAGE"
+                      columnDataType="varchar(500)"
                       oldColumnName="CAPTION"
                       newColumnName="SUBJECT"/>
 
@@ -138,7 +146,11 @@
         </update>
     </changeSet>
 
-    <changeSet id="17" author="migrator">
+    <changeSet id="17-mysql" author="migrator" dbms="mysql,mariadb">
+        <dropNotNullConstraint tableName="REPORT_EXECUTION" columnDataType="varchar(32)" columnName="USER_ID"/>
+    </changeSet>
+
+    <changeSet id="17-other" author="migrator" dbms="postgresql,hsqldb,oracle,mssql">
         <dropNotNullConstraint tableName="REPORT_EXECUTION" columnName="USER_ID"/>
     </changeSet>
     <!--REPORTS END-->

@@ -22,6 +22,7 @@
                 <dateField id="aquiredField" property="aquired"/>
                 <textField id="codeField" property="code"/>
                 <textArea id="descriptionField" property="description" rows="5"/>
+                <fileStorageUpload id="uploadFieldd" property="file"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

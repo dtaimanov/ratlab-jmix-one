@@ -4,8 +4,10 @@ import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.entity.annotation.Lookup;
 import com.haulmont.cuba.core.entity.annotation.LookupType;
+import io.jmix.core.FileRef;
 import io.jmix.core.entity.annotation.CaseConversion;
 import io.jmix.core.metamodel.annotation.JmixEntity;
+import io.jmix.core.metamodel.annotation.PropertyDatatype;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,6 +22,10 @@ public class Certificate extends StandardEntity {
 
     @Column(name = "TITLE")
     private String title;
+
+    @PropertyDatatype("fileRef")
+    @Column(name = "FILE_")
+    private FileRef file;
 
     @Temporal(TemporalType.TIMESTAMP)
     @NotNull
@@ -40,6 +46,14 @@ public class Certificate extends StandardEntity {
     @Lookup(type = LookupType.SCREEN, actions = "lookup")
     @NotNull(message = "{msg://ratlab_Certificate.owner.validation.NotNull}")
     private Employee owner;
+
+    public FileRef getFile() {
+        return file;
+    }
+
+    public void setFile(FileRef file) {
+        this.file = file;
+    }
 
     public Employee getOwner() {
         return owner;
