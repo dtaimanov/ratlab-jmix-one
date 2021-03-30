@@ -150,7 +150,11 @@
         <dropNotNullConstraint tableName="REPORT_EXECUTION" columnDataType="varchar(32)" columnName="USER_ID"/>
     </changeSet>
 
-    <changeSet id="17-other" author="migrator" dbms="postgresql,hsqldb,oracle,mssql">
+    <changeSet id="17-mssql" author="migrator" dbms="mssql">
+        <dropNotNullConstraint tableName="REPORT_EXECUTION" columnDataType="${uuid.type}" columnName="USER_ID"/>
+    </changeSet>
+
+    <changeSet id="17-other" author="migrator" dbms="postgresql,hsqldb,oracle">
         <dropNotNullConstraint tableName="REPORT_EXECUTION" columnName="USER_ID"/>
     </changeSet>
     <!--REPORTS END-->
